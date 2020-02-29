@@ -6,7 +6,7 @@ import (
 )
 
 func session(w http.ResponseWriter, r *http.Request) (sess data.Session, err error) {
-	// リクエストのクッキーを取得
+	// リクエストのクッキーを取り出す
 	cookie, err := r.Cookie("_cookie")
 	if err == nil {
 		sess = data.Session{Uuid: cookie.Value}
